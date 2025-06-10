@@ -1,0 +1,58 @@
+# Root
+.DS_Store
+.env
+*.env.local
+*.env.development.local
+*.env.test.local
+*.env.production.local
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+*.tgz
+*.tmp
+*.swp
+*.bak
+*.orig
+*.patch
+*.tsbuildinfo
+
+# Node modules (ignore globally and in subfolders just in case)
+node_modules/
+**/node_modules/
+
+# Vite / Frontend build
+/frontend/dist/
+/frontend/.vite/
+
+# Backend build (if you build it later)
+# /backend/build/
+
+# Frontend env files
+/frontend/.env*
+!.env.example
+
+# Backend env files
+/backend/.env*
+!.env.example
+
+# Editor/IDE
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# OS-specific
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Optional: coverage/testing
+coverage/
+.nyc_output/
+
+# Optional: if using Turbo, Nx, or Lerna
+.turbo/
+nx-out/
+lerna-debug.log
