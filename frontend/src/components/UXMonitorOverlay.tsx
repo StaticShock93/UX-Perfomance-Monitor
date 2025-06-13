@@ -107,11 +107,11 @@ const UXMonitorOverlay: React.FC<UXMonitorOverlayProps> = ({onClose}) => {
 			<div className='mb-3'>
 				❗ Dropped Frames: <span className='font-mono'>{dropped}</span>
 			</div>
-			<button
+			{/* <button
 				// onClick={sendSessionReport}
 				className='bg-black text-white rounded-md px-3 py-1 text-xs hover:bg-gray-800'>
 				Send Report
-			</button>
+			</button> */}
 			<div className='flex mt-3 h-2'>
 				{/* Calculates and represents frames dropped per the prior 3 seconds on the bar/blip graph */}
 				{Array.from({length: 30})
