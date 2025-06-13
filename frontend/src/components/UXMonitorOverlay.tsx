@@ -1,14 +1,14 @@
 // components/UXMonitorOverlay.tsx
 import React, {useEffect, useRef, useState} from 'react';
 
-interface Metrics {
-	fps: number;
-	dropped: number;
-	score: number;
-	timestamp: number;
-	url: string;
-	userAgent: string;
-}
+// interface Metrics {
+// 	fps: number;
+// 	dropped: number;
+// 	score: number;
+// 	timestamp: number;
+// 	url: string;
+// 	userAgent: string;
+// }
 
 interface UXMonitorOverlayProps {
 	onClose: () => void;
