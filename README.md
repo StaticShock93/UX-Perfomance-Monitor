@@ -17,21 +17,13 @@ ux-monitor-app/
 
 ```bash
 cd frontend && npm install
-cd ../backend && npm install
 
 # Run development servers #
 # Frontend
 cd frontend
 npm run dev
 
-# Backend
-cd ../backend
-npm run dev
 
 
 🛠 Tech Stack
 React + Vite (Frontend)
-
-Express (Backend)
-
-Node.js
