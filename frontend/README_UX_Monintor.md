@@ -9,7 +9,6 @@ A live UX performance monitor that captures and visualizes animation metrics fro
 ux-monitor-app/
 ├── frontend/ # Vite + React app
 
-
 ## 🚀 Getting Started
 
 ### Install dependencies
