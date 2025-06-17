@@ -1,4 +1,4 @@
-import UXMonitorToggle from './UXMonitorToggle';
+import {UXMonitorToggle} from './UXMonitorToggle';
 
 function App() {
   return (

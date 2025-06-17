@@ -8,3 +8,6 @@ createRoot(document.getElementById('root')!).render(
 		<App />
 	</StrictMode>
 );
+
+import { UXMonitorToggle } from './components/UXMonitorToggle';
+export default UXMonitorToggle;

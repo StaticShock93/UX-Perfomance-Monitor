@@ -1,8 +1,7 @@
-// UXMonitorToggle.tsx
 import {useState, useEffect} from 'react';
-import UXMonitorOverlay from './UXMonitorOverlay';
+import {UXMonitorOverlay} from './UXMonitorOverlay';
 
-export default function UXMonitorToggle() {
+export function UXMonitorToggle() {
 	const [visible, setVisible] = useState(true);
 
 	// Hotkey: Ctrl + Shift + M
@@ -18,10 +17,32 @@ export default function UXMonitorToggle() {
 
 	return (
 		<>
-			<div className='fixed top-4 right-4 z-50'>
+			<div
+				style={{
+					position: 'fixed',
+					top: '1rem',
+					right: '1rem',
+					zIndex: 9999,
+				}}>
 				<button
 					onClick={() => setVisible((prev) => !prev)}
-					className='bg-gray-900 text-white px-4 py-2 rounded-md shadow-lg hover:bg-gray-700 transition cursor-pointer'>
+					style={{
+						backgroundColor: '#111827',
+						color: 'white',
+						padding: '0.5rem 1rem',
+						borderRadius: '0.375rem',
+						boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+						cursor: 'pointer',
+						transition: 'background-color 0.3s ease',
+						border: 'none',
+						fontSize: '0.875rem',
+					}}
+					onMouseEnter={(e) =>
+						(e.currentTarget.style.backgroundColor = '#374151')
+					}
+					onMouseLeave={(e) =>
+						(e.currentTarget.style.backgroundColor = '#111827')
+					}>
 					{visible ? 'Hide Monitor' : 'Show Monitor'}
 				</button>
 			</div>

@@ -1,4 +1,3 @@
-// components/UXMonitorOverlay.tsx
 import React, {useEffect, useRef, useState} from 'react';
 
 // interface Metrics {
@@ -86,33 +85,93 @@ const UXMonitorOverlay: React.FC<UXMonitorOverlayProps> = ({onClose}) => {
 	// };
 
 	return (
-		<div className='fixed bottom-4 right-4 bg-white/90 shadow-lg rounded-xl p-4 text-sm z-[9999] w-64 border border-gray-300'>
+		<div
+			style={{
+				position: 'fixed',
+				bottom: '1rem',
+				right: '1rem',
+				background: 'rgba(255,255,255,0.9)',
+				boxShadow: '0 10px 15px rgba(0,0,0,0.1)',
+				borderRadius: '0.75rem',
+				padding: '1rem',
+				fontSize: '0.875rem',
+				zIndex: 9999,
+				width: '16rem',
+				border: '1px solid #D1D5DB',
+				fontFamily: 'sans-serif',
+			}}>
 			{/* Header Row with Title and Close Button */}
-			<div className='flex justify-between items-center font-semibold mb-2'>
+			<div
+				style={{
+					display: 'flex',
+					justifyContent: 'space-between',
+					alignItems: 'center',
+					fontWeight: 600,
+					marginBottom: '0.5rem',
+				}}>
 				<span>🎛 UX Monitor</span>
 				<button
 					onClick={onClose}
 					aria-label='Close Monitor'
-					className='text-gray-500 hover:text-red-500 text-lg leading-none cursor-pointer'>
+					style={{
+						color: '#6B7280',
+						fontSize: '1.125rem',
+						lineHeight: 1,
+						cursor: 'pointer',
+						background: 'none',
+						border: 'none',
+					}}
+					onMouseEnter={(e) => (e.currentTarget.style.color = '#EF4444')}
+					onMouseLeave={(e) => (e.currentTarget.style.color = '#6B7280')}>
 					❌
 				</button>
 			</div>
 
-			<div className='mb-1'>
-				🎯 Score: <span className='font-mono'>{score}</span>
+			<div
+				style={{
+					marginBottom: '0.25rem',
+					all: 'unset',
+					display: 'block',
+					textAlign: 'start',
+				}}>
+				🎯 Score: <span style={{fontFamily: 'monospace'}}>{score}</span>
 			</div>
-			<div className='mb-1'>
-				🎞 FPS: <span className='font-mono'>{fps}</span>
+			<div
+				style={{
+					marginBottom: '0.25rem',
+					all: 'unset',
+					display: 'block',
+					textAlign: 'start',
+				}}>
+				🎞 FPS: <span style={{fontFamily: 'monospace'}}>{fps}</span>
 			</div>
-			<div className='mb-3'>
-				❗ Dropped Frames: <span className='font-mono'>{dropped}</span>
+			<div
+				style={{
+					marginBottom: '0.75rem',
+					all: 'unset',
+					display: 'block',
+					textAlign: 'start',
+				}}>
+				❗ Dropped Frames:{' '}
+				<span style={{fontFamily: 'monospace'}}>{dropped}</span>
 			</div>
+
 			{/* <button
 				// onClick={sendSessionReport}
-				className='bg-black text-white rounded-md px-3 py-1 text-xs hover:bg-gray-800'>
+				style={{
+					backgroundColor: '#000',
+					color: '#fff',
+					borderRadius: '0.375rem',
+					padding: '0.25rem 0.75rem',
+					fontSize: '0.75rem',
+					cursor: 'pointer',
+					border: 'none',
+				}}
+			>
 				Send Report
 			</button> */}
-			<div className='flex mt-3 h-2'>
+
+			<div style={{display: 'flex', marginTop: '0.75rem', height: '0.5rem'}}>
 				{/* Calculates and represents frames dropped per the prior 3 seconds on the bar/blip graph */}
 				{Array.from({length: 30})
 					.map((_, barIndex) => {
@@ -123,9 +182,12 @@ const UXMonitorOverlay: React.FC<UXMonitorOverlayProps> = ({onClose}) => {
 						return (
 							<div
 								key={barIndex}
-								className={`w-1 h-2 ${
-									recentDrop ? 'bg-red-500' : 'bg-green-300'
-								} mx-[0.5px]`}
+								style={{
+									width: '0.25rem',
+									height: '0.5rem',
+									backgroundColor: recentDrop ? '#EF4444' : '#86EFAC',
+									margin: '0 0.5px',
+								}}
 							/>
 						);
 					})
@@ -135,4 +197,4 @@ const UXMonitorOverlay: React.FC<UXMonitorOverlayProps> = ({onClose}) => {
 	);
 };
 
-export default UXMonitorOverlay;
+export {UXMonitorOverlay};

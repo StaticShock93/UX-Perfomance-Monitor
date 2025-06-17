@@ -4,6 +4,14 @@ A live UX performance monitor that captures and visualizes animation metrics fro
 
 ---
 
+## Install and use in your next project!
+
+```bash
+npm install ux-dev-monitor-tool
+
+import UXMonitorOverlay from 'ux-dev-monitor-tool' ----> in component/page of choice as <UXMonitorOverlay />
+```
+
 ## 🗂 Project Structure
 
 ux-monitor-app/
@@ -25,3 +33,4 @@ npm run dev
 
 🛠 Tech Stack
 React + Vite (Frontend)
+```
